@@ -16,6 +16,7 @@
     "request": "^2.36.0",
     "static-favicon": "~1.0.0",
     "strftime": "^0.8.0",
-    "url": "^0.10.1"
+    "url": "^0.10.1",
+    "nodemailer": "0.3.x"
   }
 }
