@@ -4,13 +4,16 @@ var request = require('request');
 var cheerio = require('cheerio');
 var strftime = require('strftime');
 
+
+
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index', { 
-      title: 'Keep Streaking'});
+      title: 'Keep Streaking'
+    });
 });
 
-router.get('/:username', function(req, res){
+router.get('/settings', function(req, res){
   url = 'https://github.com/' + req.params.username;
   request(url, function(err, resp, body){
     $ = cheerio.load( body );
@@ -24,6 +27,10 @@ router.get('/:username', function(req, res){
       user: req.params.username,
       is_today: is_today });
     });
-})
+});
+
+router.get('/callback', function(req, res){
+
+});
 
 module.exports = router;
