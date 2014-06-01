@@ -14,6 +14,10 @@ User: keepstreaking
 pass: keepstreaking
 db:   keepstreaking
 
+make sure the $PATH is correct in bashrc/zshrc etc
+export PATH=/Library/PostgreSQL/9.3/bin:$PATH
+or whatever the path to bin is.
+
 ## Super Sensitive OAuth Creds
 
 **Client ID** 4537e65f3d162cb4b2c3
