@@ -10,7 +10,9 @@ var conString = "postgres://keepstreaking:keepstreaking@localhost/keepstreaking"
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index', { 
-      title: 'Keep Streaking'});
+      title: 'Keep Streaking'
+    });
+    req.session.sendemails = "no";
 });
 
 function user_in_db(user, callback){
@@ -33,27 +35,46 @@ function user_in_db(user, callback){
 }
 
 router.get('/settings', function(req, res){
+  //sendemails? =  select sendemail where username == session.username;
+  res.render('settings', { sendemails: req.session.sendemails });
+});
 
-  user_in_db( req.params.username, function(  bool ){
-    if (bool){
-    url = 'https://github.com/jeresig';
-    request(url, function(err, resp, body){
-      $ = cheerio.load( body );
-      num = $('.contrib-streak-current .num').text();
-      last_day = $('.contrib-streak-current').text().split('-')[1].replace(/(?!\w)[\x00-\xC0]/g, '');
-      today = strftime('%B%d').replace(/(?!\w)[\x00-\xC0]/g, '');
-      is_today = today == last_day ? true : false;
-      res.render('streaker', { 
-	title: 'Keep Streaking',
-	current_streak: num,
-	user: req.params.username,
-	is_today: is_today });
-      });
-
-    } else {
-      res.render('error', {user: req.params.username});
+router.get('/stop', function( req, res ) {
+  // update user 1/0 send emails? false
+  var client = new pg.Client(conString);
+  client.connect(function(err) {
+    if(err) {
+      return console.error('could not connect to postgres', err);
     }
+    client.query("UPDATE streakers SET sendemails = '0' WHERE username = 'jeresig';", function(err, result) {
+      if(err) {
+	return console.error('error running query', err);
+      }
+      client.end();
+    });
   });
-})
+  req.session.sendemails = "no";
+  res.redirect('/settings');
+});
+
+router.get('/start', function( req, res ) {
+  var client = new pg.Client(conString);
+  client.connect(function(err) {
+    if(err) {
+      return console.error('could not connect to postgres', err);
+    }
+    client.query("UPDATE streakers SET sendemails = '1' WHERE username = 'jeresig';", function(err, result) {
+      if(err) {
+	return console.error('error running query', err);
+      }
+      client.end();
+    });
+  });
+  req.session.sendemails = "yes";
+  res.redirect('/settings');
+});
+
 
 module.exports = router;
+
+

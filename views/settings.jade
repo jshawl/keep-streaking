@@ -1,6 +1,10 @@
 extends layout
-
 block content
   h1 Keep Steaking (#{user})
   h2 Current Streak : #{current_streak}
   h2 Is Today? : #{is_today}
+
+  if sendemails == "yes"
+    a(href='/stop') Stop Sending me emails
+  else
+    a(href='/start') Sign me up!
