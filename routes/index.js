@@ -19,7 +19,7 @@ function user_in_db(user, callback){
     if(err) {
       return console.error('could not connect to postgres', err);
     }
-    client.query("SELECT * FROM streakers WHERE username = '"+ user +"';", function(err, result) {
+    client.query("SELECT * FROM streakers WHERE username = jeresig;", function(err, result) {
       if(err) {
 	return console.error('error running query', err);
       }
@@ -32,7 +32,7 @@ function user_in_db(user, callback){
   });
 }
 
-router.get('/:username', function(req, res){
+router.get('/settings', function(req, res){
 
   user_in_db( req.params.username, function(  bool ){
     if (bool){
