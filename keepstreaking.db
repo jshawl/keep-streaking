@@ -1,0 +1,117 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: streakers; Type: TABLE; Schema: public; Owner: jesse; Tablespace: 
+--
+
+CREATE TABLE streakers (
+    id integer NOT NULL,
+    username character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.streakers OWNER TO jesse;
+
+--
+-- Name: streakers_id_seq; Type: SEQUENCE; Schema: public; Owner: jesse
+--
+
+CREATE SEQUENCE streakers_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.streakers_id_seq OWNER TO jesse;
+
+--
+-- Name: streakers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jesse
+--
+
+ALTER SEQUENCE streakers_id_seq OWNED BY streakers.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: jesse
+--
+
+ALTER TABLE ONLY streakers ALTER COLUMN id SET DEFAULT nextval('streakers_id_seq'::regclass);
+
+
+--
+-- Data for Name: streakers; Type: TABLE DATA; Schema: public; Owner: jesse
+--
+
+COPY streakers (id, username) FROM stdin;
+1	jshawl
+\.
+
+
+--
+-- Name: streakers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jesse
+--
+
+SELECT pg_catalog.setval('streakers_id_seq', 2, true);
+
+
+--
+-- Name: streakers_pkey; Type: CONSTRAINT; Schema: public; Owner: jesse; Tablespace: 
+--
+
+ALTER TABLE ONLY streakers
+    ADD CONSTRAINT streakers_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: streakers_username_key; Type: CONSTRAINT; Schema: public; Owner: jesse; Tablespace: 
+--
+
+ALTER TABLE ONLY streakers
+    ADD CONSTRAINT streakers_username_key UNIQUE (username);
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: jesse
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM jesse;
+GRANT ALL ON SCHEMA public TO jesse;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

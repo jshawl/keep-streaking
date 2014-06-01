@@ -8,6 +8,12 @@
     $ npm start
     $ open http://localhost:3000
 
+## Postgres setup
+
+User: keepstreaking
+pass: keepstreaking
+db:   keepstreaking
+
 ## Super Sensitive OAuth Creds
 
 **Client ID** 4537e65f3d162cb4b2c3
