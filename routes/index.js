@@ -19,7 +19,7 @@ function user_in_db(user, callback){
     if(err) {
       return console.error('could not connect to postgres', err);
     }
-    client.query("SELECT * FROM streakers WHERE username = jeresig;", function(err, result) {
+    client.query("SELECT * FROM streakers WHERE username = 'jeresig';", function(err, result) {
       if(err) {
 	return console.error('error running query', err);
       }
@@ -36,7 +36,7 @@ router.get('/settings', function(req, res){
 
   user_in_db( req.params.username, function(  bool ){
     if (bool){
-    url = 'https://github.com/' + req.params.username;
+    url = 'https://github.com/jeresig';
     request(url, function(err, resp, body){
       $ = cheerio.load( body );
       num = $('.contrib-streak-current .num').text();
