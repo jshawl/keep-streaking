@@ -8,6 +8,24 @@ var session = require('express-session');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('keepstreaking','keepstreaking','keepstreaking');
+
+var User = sequelize.define('User', {
+  username: Sequelize.STRING,
+  sendemails: Sequelize.SMALLINT
+});
+
+sequelize.sync().success(function() {
+  User.create({
+    username: 'jesse',
+    sendemails: 'yes'
+  }).success( function(sdepold) {
+    console.log(sdepold.values);
+  })
+})
+    
+
 
 var app = express();
 
