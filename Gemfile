@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 gem "omniauth-github", '1.1.1'
 
+gem 'rest-client'
+
 gem 'octokit'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
