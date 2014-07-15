@@ -12,8 +12,7 @@ class User < ActiveRecord::Base
     @settings = []
     @users.each do |u|
       @user = {}
-      puts u.id.inspect
-      @user[:name] = User.find( 1 ).name
+      @user[:name] = User.find( u.id ).name
       @user[:reminders] = u.setting.reminders
       @settings << @user
     end

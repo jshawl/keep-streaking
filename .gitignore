@@ -16,4 +16,3 @@
 /tmp
 
 # ignore secret tokens
-config/environments/env.rb
