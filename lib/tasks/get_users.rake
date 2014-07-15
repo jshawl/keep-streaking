@@ -10,7 +10,9 @@ task :get_users => :environment do
     has_contributed = response[-1][-1]
     if has_contributed == 0
       puts 'email '+ u[:name]
+      puts u.inspect
+      @u = User.find_by(:name => u[:name])
+      UserMailer.send_email( @u ).deliver
     end
   end
 end
-
