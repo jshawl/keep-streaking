@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_one :setting
   def self.create_with_omniauth(auth)
       create! do |user|
-        puts user.inspect
+        user.email = auth["extra"]["raw_info"]["email"]
 	user.provider = auth["provider"]
 	user.uid = auth["uid"]
 	user.name = auth["extra"]['raw_info']['login']
