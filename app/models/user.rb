@@ -7,4 +7,16 @@ class User < ActiveRecord::Base
 	user.name = auth["extra"]['raw_info']['login']
       end
   end
+  def self.settings
+    @users = User.all
+    @settings = []
+    @users.each do |u|
+      @user = {}
+      puts u.id.inspect
+      @user[:name] = User.find( 1 ).name
+      @user[:reminders] = u.setting.reminders
+      @settings << @user
+    end
+    @settings
+  end
 end
