@@ -8,6 +8,12 @@
 </head>
 <body>
 
+  <% if current_user %>
+    <%= link_to "Logout "+ current_user.name, '/signout'  %>
+  <% else %>
+    <%= link_to "Sign in with Github", "/auth/github" %>
+  <% end %>
+
 <%= yield %>
 
 </body>
