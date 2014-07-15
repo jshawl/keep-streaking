@@ -5,6 +5,19 @@ Rails.application.configure do
   config.cache_classes = true
   config.consider_all_requests_local = true
 
+
+  config.cache_classes = false
+          config.action_mailer.smtp_settings =  {
+          :enable_starttls_auto => true,
+          :address        => 'smtp.gmail.com',
+          :port           => 587,                                   # default port for gmail.
+          :domain         => 'localhost:3000',
+          :authentication => :login,
+          :content_type   => "text/html",
+          :user_name      => 'gitstreak@gmail.com',
+          :password       => 'K33pstreaking'
+                                                                  }
+
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
