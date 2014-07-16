@@ -18,6 +18,12 @@
   <% else %>
     <%= link_to "Sign in with Github", "/auth/github", :class => 'btn center' %>
   <% end %>
+  <nav>
+    <ul>
+      <li><%= link_to 'Settings' ,settings_path %></li>
+      <li><%= link_to 'Leaderboard', '/leaderboard'  %></li>
+    </ul>
+  </nav>
 
 <%= yield %>
 
