@@ -1,0 +1,6 @@
+<table border=1>
+<% @streaks.each do |s| %>
+  <td><a href='https://github.com/<%= s.user.name %>'><%= s.user.name %></a></td>
+  <td><%= s.streak %> days!</td>
+<% end %>
+</table>
