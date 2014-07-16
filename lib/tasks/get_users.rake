@@ -25,7 +25,6 @@ task :get_users => :environment do
     @s.save
     puts "didn't return"
     has_contributed = response[-1][-1]
-    has_contributed = 0
     if has_contributed == 0
       puts 'email '+ u[:name]
       #puts u.inspect
