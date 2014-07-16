@@ -16,9 +16,9 @@ class User < ActiveRecord::Base
     @users.each do |u|
       @user = {}
       @user[:name] = User.find( u.id ).name
-      @user[:reminders] = u.setting.reminders
+      @user[:reminders] = u.setting ? u.setting.reminders : false
       @user[:id] = u.id
-      @settings << @user
+      @settings << @user if @user[:reminders]
     end
     @settings
   end
