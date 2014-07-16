@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140715113913) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "settings", force: true do |t|
     t.boolean  "reminders"
     t.integer  "user_id"
