@@ -21,3 +21,5 @@ test:
 
 production:
   <<: *default
+  username: keepstreaking.com
+  passowrd: UmFvemZZMnhvMTBNazkvUTFFdm1vZC9xQnV6SnlxTldvUVRCRGdnVXpjbz0K
