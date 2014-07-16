@@ -120,3 +120,9 @@ img {
   border: 1px solid #8DA590;
   color: #48694D;
 }
+
+rect {
+stroke:#FFF;
+stroke-width:.5;
+}
+
