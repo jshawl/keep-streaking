@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
       @user = {}
       @user[:name] = User.find( u.id ).name
       @user[:reminders] = u.setting.reminders
+      @user[:id] = u.id
       @settings << @user
     end
     @settings
