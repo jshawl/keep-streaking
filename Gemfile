@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem "omniauth-github", '1.1.1'
 
+gem 'rails_12factor'
 gem 'rest-client'
 
 gem 'pg'
