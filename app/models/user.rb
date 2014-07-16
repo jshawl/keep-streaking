@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_one :setting
+  has_one :streak
+
   def self.create_with_omniauth(auth)
       create! do |user|
         user.email = auth["extra"]["raw_info"]["email"]
