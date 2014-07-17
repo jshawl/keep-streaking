@@ -126,3 +126,8 @@ stroke:#FFF;
 stroke-width:.5;
 }
 
+.center.logo {
+  padding: 2em 0em;
+  margin-top: 3em;
+  display: block;
+}

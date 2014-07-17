@@ -82,9 +82,11 @@ var colorArr = ['#6BAA5E', '#AAEA88', '#3D7232'];
 // var colorArr = ['#8cc665', '#44a340', '#1e6823'];
 
 
-var draw = SVG('logo').size(700,120).fixSubPixelOffset();
+var draw = SVG('logo').size(700,120).attr('class','center logo').fixSubPixelOffset();
 
-for (var i = 0; i < logoArr.length; i++) {
+function drawLogo () {
+  draw.clear();
+  for (var i = 0; i < logoArr.length; i++) {
     var x = Math.floor(logoArr[i][0]*15),
         y = Math.floor(logoArr[i][1]*15),
         bgColor = colorArr[Math.floor(Math.random() * 3)];
@@ -99,4 +101,16 @@ for (var i = 0; i < logoArr.length; i++) {
        //
 
     draw.rect(14.5,14.5).fill(bgColor).x(x).y(y);
+  }
 }
+
+drawLogo();
+
+var logoInterval;
+
+$('#logo svg').hover(function(){
+  logoInterval = setInterval('drawLogo()', 10);
+}, function(){
+  clearInterval(logoInterval);
+})
+
