@@ -3,13 +3,12 @@
 <head>
   <title>Keepstreaking</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ 
   <%= csrf_meta_tags %>
   <meta name="google-site-verification" content="Ha9YCEJXIW35cu4FGicNByf9zo5bAihmV5slVUp-_M0" />
 </head>
 <body>
-
-  <%= image_tag("logo.png", :alt => "rss feed", :class => "center space-vert") %>
+  <div id='logo'></div>
 
   <p class='center text-center'>Timely email reminders so you never lose your streak on Github!</p>
 
@@ -29,6 +28,6 @@
   </nav>
 
 <%= yield %>
-
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
