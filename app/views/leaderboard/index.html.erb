@@ -1,5 +1,9 @@
 <a href='/' id='logo'></a>
-<%= link_to "Logout "+ current_user.name, '/signout'%>
+<% if !current_user %>
+    <%= link_to "Sign in with Github", "/auth/github", :class => 'btn center' %>
+<% end %>
+<% if current_user %>
+  <%= link_to "Logout "+ current_user.name, '/signout'%>
 <%= form_for(@setting) do |f| %>
   <% if @setting.errors.any? %>
     <div id="error_explanation">
@@ -26,6 +30,7 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+<% end %>
 <% end %>
 <h1>The Leaderboard</h1>
 <table border=1>
