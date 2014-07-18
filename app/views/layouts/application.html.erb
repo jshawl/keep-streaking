@@ -8,30 +8,9 @@
   <meta name="google-site-verification" content="Ha9YCEJXIW35cu4FGicNByf9zo5bAihmV5slVUp-_M0" />
 </head>
 <body>
-
-  <% if current_user %>
-    
-    <!-- add logo -->
-    <!-- add settings buttons -->
-
-    <ul>
-      <li><%= link_to "Logout "+ current_user.name, '/signout', :class => 'center' %></li>
-    </ul>
-
-    <!-- add leaderboard -->
-    
-    <p>Like this? <a href="mailto:hello@dvncan.com,jesse@jshawl.com?cc=cash@square.com&amp;subject=%1010.00&amp;body=Keep Streaking is awesome! Go treat yourselves to some drinks!" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=hello@dvncan.com,jesse@jshawl.com&amp;cc=cash@square.com&amp;bcc=&amp;su=%242.99&amp;body=Keep Streaking is awesome! Go treat yourselves to some drinks!">Treat us to a round of drinks!</a></p>
-  
-  <% else %>
-    
-    <div id='logo'></div>
-      <p class='center text-center'>Timely email reminders so you never lose your streak on Github!</p>
-
-    <%= link_to "Sign in with Github", "/auth/github", :class => 'btn center' %>
-  <% end %>
-  
-  
-<%= yield %>
- <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <div id='logo'></div>
+  <%= yield %>
+  <p>Like this? <a href="mailto:hello@dvncan.com,jesse@jshawl.com?cc=cash@square.com&amp;subject=%1010.00&amp;body=Keep Streaking is awesome! Go treat yourselves to some drinks!" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=hello@dvncan.com,jesse@jshawl.com&amp;cc=cash@square.com&amp;bcc=&amp;su=%242.99&amp;body=Keep Streaking is awesome! Go treat yourselves to some drinks!">Treat us to a round of drinks!</a></p>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
