@@ -12,8 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :reminders %><br>
+    <%= f.label "Email me when I'm about to lose my streak" %><br>
     <%= f.check_box :reminders %>
+  </div>
+  <div class="field">
+    <%= f.label "Feature on leaderboard "%><br>
+    <%= f.check_box :public %>
   </div>
   <div class="actions">
     <%= f.submit %>

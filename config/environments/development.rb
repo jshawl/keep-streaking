@@ -12,8 +12,8 @@ Rails.application.configure do
           :domain         => 'localhost:3000',
           :authentication => :login,
           :content_type   => "text/html",
-          :user_name      => 'gitstreak@gmail.com',
-          :password       => 'K33pstreaking'
+          :user_name      => 'notifications@keepstreaking.com',
+          :password       => 'K33pStreaking'
                                                                   }
 
 

@@ -1,6 +1,7 @@
 class UserMailer < ActionMailer::Base
-  default :from => "gitstreak@gmail.com"
+  default from: '"Keep Streaking" <notifications@keepstreaking.com>'
   def send_email(user)
-    mail(:to => user.email, :subject => "Commit Asap! You're about to lose your streak")
+    @days = user.streak.streak
+    mail(:to => user.email, :subject => "You're about to lose your streak")
   end
 end
