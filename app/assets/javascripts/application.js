@@ -107,10 +107,12 @@ function drawLogo () {
 drawLogo();
 
 var logoInterval;
-
-$('#logo svg').hover(function(){
-  logoInterval = setInterval('drawLogo()', 10);
-}, function(){
+$('#logo').on('mouseenter', function(){
+  console.log(logoInterval)
+  if (!logoInterval) {
+    logoInterval = setInterval('drawLogo()', 10);
+  }
+}).on('mouseleave', function(){
   clearInterval(logoInterval);
-})
-
+  logoInterval = undefined;
+});
