@@ -1,3 +1,33 @@
+<a href='/' id='logo'></a>
+<%= link_to "Logout "+ current_user.name, '/signout'%>
+<%= form_for(@setting) do |f| %>
+  <% if @setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@setting.errors.count, "error") %> prohibited this setting from being saved:</h2>
+
+      <ul>
+      <% @setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br>
+
+  <div class="field">
+    <%= f.label "Email Reminders" %>
+    <%= f.check_box :reminders %>
+  </div>
+  <div class="field">
+    <%= f.label "Feature on Leaderboard"%>
+    <%= f.check_box :public %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<h1>The Leaderboard</h1>
 <table border=1>
 <% @streaks.each do |s| %>
   <td><a href='https://github.com/<%= s.user.name %>'><%= s.user.name %></a></td>
