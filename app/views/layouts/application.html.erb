@@ -11,11 +11,12 @@
 
   <% if current_user %>
     
+    <%= image_tag("logo.png", :alt => "logo", :class => "small center logo" ) %>   
     <!-- add logo -->
     <!-- add settings buttons -->
 
     <ul>
-      <li><%= link_to "Logout "+ current_user.name, '/signout', :class => 'center' %></li>
+      <li><%= link_to "Logout "+ current_user.name, '/signout', :class => 'btn center' %></li>
     </ul>
 
     <!-- add leaderboard -->
@@ -25,9 +26,10 @@
   <% else %>
     
     <div id='logo'></div>
-      <p class='center text-center'>Timely email reminders so you never lose your streak on Github!</p>
+      <p class='center text-center italic'>  timely email reminders so you never lose your streak on github</p>
 
-    <%= link_to "Sign in with Github", "/auth/github", :class => 'btn center' %>
+    <%= link_to "Sign in with Github", "/auth/github", :class => 'caps btn center' %>
+
   <% end %>
   
   
