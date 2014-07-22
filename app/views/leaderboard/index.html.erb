@@ -3,7 +3,6 @@
     <%= link_to "Sign in with Github", "/auth/github", :class => 'btn center' %>
 <% end %>
 <% if current_user %>
-  <%= link_to "Logout "+ current_user.name, '/signout'%>
 <%= form_for(@setting) do |f| %>
   <% if @setting.errors.any? %>
     <div id="error_explanation">
@@ -18,17 +17,23 @@
   <% end %>
 
   <br>
+  <div class='grid nav'>
+    <div class='third'>
 
-  <div class="field">
-    <%= f.label "Email Reminders" %>
-    <%= f.check_box :reminders %>
+    <label >
+      email
+      <%= f.check_box :reminders %>
+    </label>
   </div>
-  <div class="field">
-    <%= f.label "Feature on Leaderboard"%>
+    <div class='third'>
+    <label >
+      leaderboard
     <%= f.check_box :public %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    </label>
+    </div>
+    <div class='third'>
+      <%= link_to "Logout "+ current_user.name, '/signout'%>
+    </div>
   </div>
 <% end %>
 <% end %>
