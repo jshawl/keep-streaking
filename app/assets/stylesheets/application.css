@@ -34,10 +34,8 @@ body {
 
 p {
   margin: 0 auto;
-  color: #999;
-  font-family: Georgia, serif;
   max-width: 40em;
-  font-size: 1.25em;       /* 16 */
+  font-size: 1em;       /* 16 */
   line-height: 1.5em;   /* 24 */
   margin-bottom: 1.5em;
 }
@@ -89,6 +87,7 @@ a {
 
 label {
   font-weight: bold;
+  display:inline-block;
 }
 
 img {
@@ -111,13 +110,14 @@ img {
   width: 20em;
   text-align: center;
   margin: 6em auto;
-  padding: 4.5em;
+  padding: 2em;
   display: block;
+  border: 1px solid #C0E2C5;
   color: #6E9173;
-  font-weight: bold;
 }
 
 .btn:hover {
+  border: 1px solid #8DA590;
   color: #48694D;
 }
 
@@ -126,32 +126,27 @@ stroke:#FFF;
 stroke-width:.5;
 }
 
-
-.italic {
-  font-style: italic;
-}
-
-.caps {
-  text-transform: uppercase;
-}
-
-.info {
-  width: 100%;
-  position: absolute;
-  bottom: 2em;
-  color: #999;
-  font-family:monospace;
-  font-size: 1em;
-}
-
 .center.logo {
-  padding: 2.5em 0em;
+  padding: 2em 0em;
   margin-top: 3em;
   display: block;
 }
 
-.logo.small {
-  width: 32em;
-  padding: 1em;
+
+body{
+  max-width:40em;
+  margin:0 auto 4em auto;
 }
 
+table{
+  border-collapse:collapse;
+  width:100%;
+}
+
+  th, td{
+    padding: .5em;
+  }
+
+  td:nth-child(2){
+    text-align:right;
+  }

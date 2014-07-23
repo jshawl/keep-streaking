@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)     
     session[:user_id] = user.id     
     session[:user_name] = user.name     
-    redirect_to settings_path, :notice => "Signed in!"
+    redirect_to '/leaderboard', :notice => "Signed in!"
   end
   def destroy
     session[:user_id] = nil

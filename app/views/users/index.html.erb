@@ -1,1 +1,18 @@
-<span class="center text-center info"><%= @users %> streakers strong / top streak: <%= @topstreak %> days</span>
+  <div id='logo'></div>
+
+  <p class='center text-center'>Timely email reminders so you never lose your streak on Github!</p>
+
+
+  <% if current_user %>
+    <%= link_to "Logout "+ current_user.name, '/signout', :class => 'btn center' %>
+  <% else %>
+    <%= link_to "Sign in with Github", "/auth/github", :class => 'btn center' %>
+  <% end %>
+  <nav>
+    <ul>
+      <li><%= link_to 'Leaderboard', '/leaderboard'  %></li>
+    </ul>
+  </nav>
+
+<p class="center text-center"><%= @users %> streakers strong!</p>
+<p class="center text-center"> Top streak: <%= @topstreak %> days!</p>

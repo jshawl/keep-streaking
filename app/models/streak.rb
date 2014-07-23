@@ -5,6 +5,7 @@ class Streak < ActiveRecord::Base
   end
   def self.leaderboard
     @streaks = Streak.all.sort_by{ |p| p.streak }
-    @streaks.delete_if { |s| !s.user.setting.public  }
+    @streaks.reverse!
+    @streaks.delete_if { |s| !s.user.setting.public || s.streak == 0 }
   end
 end

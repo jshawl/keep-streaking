@@ -1,3 +1,30 @@
 // Place all the styles related to the leaderboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+  &, &:after, &:before{
+    box-sizing:border-box;
+  }
+}
+
+.grid{
+  &:after{
+    clear:both;
+  }
+}
+
+.third{
+  width:33.33%;
+  float:left;
+  padding:.5em;
+}
+
+.nav label,
+.nav a{
+   background:green; 
+   display:block;
+   text-align:center;
+   line-height:1.5;
+   color:#fff;
+}

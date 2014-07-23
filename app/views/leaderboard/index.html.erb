@@ -1,6 +1,48 @@
+<a href='/' id='logo'></a>
+<% if !current_user %>
+    <%= link_to "Sign in with Github", "/auth/github", :class => 'btn center' %>
+<% end %>
+<% if current_user %>
+<%= form_for(@setting) do |f| %>
+  <% if @setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@setting.errors.count, "error") %> prohibited this setting from being saved:</h2>
+
+      <ul>
+      <% @setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br>
+  <div class='grid nav'>
+    <div class='third'>
+
+    <label >
+      email
+      <%= f.check_box :reminders %>
+    </label>
+  </div>
+    <div class='third'>
+    <label >
+      leaderboard
+    <%= f.check_box :public %>
+    </label>
+    </div>
+    <div class='third'>
+      <%= link_to "Logout "+ current_user.name, '/signout'%>
+    </div>
+  </div>
+<% end %>
+<% end %>
+<h1>The Leaderboard</h1>
 <table border=1>
 <% @streaks.each do |s| %>
-  <td><a href='https://github.com/<%= s.user.name %>'><%= s.user.name %></a></td>
-  <td><%= s.streak %> days!</td>
+  <tr>
+    <td><a href='https://github.com/<%= s.user.name %>'><%= s.user.name %></a></td>
+    <td><%= s.streak %> days!</td>
+  </tr>
 <% end %>
 </table>
