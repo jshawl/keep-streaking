@@ -15,86 +15,9 @@
  */
 
 
-html {
-  font-size: 16px;
-}
-
-body {
-  font-size: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-};
-
-@media all and (max-width: 72em) {
-  body {
-    // font-size: 95%;
-  }
-}
-
-p {
-  margin: 0 auto;
-  max-width: 40em;
-  font-size: 1em;       /* 16 */
-  line-height: 1.5em;   /* 24 */
-  margin-bottom: 1.5em;
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-h1 {
-  font-size: 3em;       /* 48 */
-  line-height: 2em;     /* 48 */
-  float: left;
-  width: 15em;
-  margin: 1em auto .5em;
-}
-
-h2 {
-  font-size: 2.25em;       /* 36 */
-  line-height: 1.3333em;   /* 48 */
-  // margin: .66667em;
-  margin: 1.3333em auto .66667em;
-}
-
-h3 {
-  font-size: 1.5em;     /* 24 */
-  line-height: 1em;     /* 24 */
-  margin-bottom: 1em;
-}
-
-h4, h5, h6 {
-  font-size: 1em;      /* 16 */
-  line-height: 1.5em;  /* 24 */
-  margin-bottom: 1.5em;
-}
-
-ul, ol {
-  font-size: 1em;
-	list-style-type: none;
-  line-height: 1.5em;
-  margin: 0 auto 1.5em;
-  padding-left: 3em;
-}
-
-a {
-  text-decoration: none;
-}
-
-label {
-  font-weight: bold;
-  display:inline-block;
-}
-
-img {
-  display: block
-}
-
 .center {
+  color: #999;
+  font-family: Georgia, serif;
   margin: 0em auto;
 }
 
@@ -107,17 +30,17 @@ img {
 }
 
 .btn {
-  width: 20em;
+  font-family: sans-serif;
   text-align: center;
+  text-transform: uppercase;
   margin: 6em auto;
-  padding: 2em;
+  padding: 4.5em;
   display: block;
-  border: 1px solid #C0E2C5;
   color: #6E9173;
+  font-weight: bold;
 }
 
 .btn:hover {
-  border: 1px solid #8DA590;
   color: #48694D;
 }
 
@@ -132,10 +55,12 @@ stroke-width:.5;
   display: block;
 }
 
+.italic {
+  font-style: italic
+}
 
-body{
-  max-width:40em;
-  margin:0 auto 4em auto;
+#logo {
+  margin-bottom: 2em;
 }
 
 table{
