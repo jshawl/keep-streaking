@@ -1,3 +1,7 @@
-Make a commit asap! You're about to lose your streak of <%= @days %> days!
-<br><br>
-<%= link_to "Change notification settings", "http://keepstreaking.com" %>
+<% if @days > 0 %>
+  Make a commit asap! You're about to lose your streak of <%= @days %> days!
+<% else %>
+  Make a commit to start your streak! <a href="https://www.youtube.com/watch?v=tbkOZTSvrHs">Here's some inspirational music to set the mood.</a>
+<% end %>
+  <br><br>
+  <%= link_to "Change notification settings", "http://keepstreaking.com" %>
