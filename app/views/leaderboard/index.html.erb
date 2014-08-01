@@ -3,6 +3,7 @@
     <%= link_to "Sign in with Github", "/auth/github", :class => 'btn center' %>
 <% end %>
 <% if current_user %>
+ <div class="container">
 <%= form_for(@setting) do |f| %>
   <% if @setting.errors.any? %>
     <div id="error_explanation">
@@ -21,7 +22,7 @@
     <div class='third'>
 
     <label >
-      email
+      email reminders
       <%= f.check_box :reminders %>
     </label>
   </div>
@@ -37,14 +38,16 @@
   </div>
 <% end %>
 <% end %>
-<h1>The Leaderboard</h1>
-<table border=1>
+<p class="header">The Leaderboard</p>
+<table border=0>
 <% @streaks.each do |s| %>
   <tr>
     <td><a href='https://github.com/<%= s.user.name %>'><%= s.user.name %></a></td>
     <td><%= s.streak %> days!</td>
   </tr>
 <% end %>
-
-  <p>Like this? <a href="mailto:hello@dvncan.com,jesse@jshawl.com?cc=cash@square.com&amp;subject=%1010.00&amp;body=Keep Streaking is awesome! Go treat yourselves to some drinks!" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=hello@dvncan.com,jesse@jshawl.com&amp;cc=cash@square.com&amp;bcc=&amp;su=%242.99&amp;body=Keep Streaking is awesome! Go treat yourselves to some drinks!">Treat us to a round of drinks!</a></p>
 </table>
+
+
+  <p class="info">Like this? <a href="mailto:hello@dvncan.com,jesse@jshawl.com?cc=cash@square.com&amp;subject=%1010.00&amp;body=Keep Streaking is awesome! Go treat yourselves to some drinks!" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=hello@dvncan.com,jesse@jshawl.com&amp;cc=cash@square.com&amp;bcc=&amp;su=%242.99&amp;body=Keep Streaking is awesome! Go treat yourselves to some drinks!">Treat us to a round of drinks!</a></p>
+</div>

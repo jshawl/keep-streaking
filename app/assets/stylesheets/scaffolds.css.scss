@@ -18,7 +18,6 @@ body {
 
 p {
   margin: 0 auto;
-  max-width: 40em;
   color: #999;
   font-family: Georgia, serif;
   font-size: 1.25em;       /* 16 */
@@ -33,10 +32,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 {
-  font-size: 3em;       /* 48 */
-  line-height: 2em;     /* 48 */
+  font-size: 2em;
+  line-height: 2em;
   float: left;
-  width: 15em;
+  width: 100%;
+  color: #999;
+  font-family: sans-serif;
   margin: 1em auto .5em;
 }
 
@@ -69,11 +70,6 @@ ul, ol {
 
 a {
   text-decoration: none;
-}
-
-label {
-  font-weight: bold;
-  display:inline-block;
 }
 
 img {
@@ -117,4 +113,11 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+
+.info {
+  text-align: center;
+  font-family: monospace;
+  font-size: .8em;
 }

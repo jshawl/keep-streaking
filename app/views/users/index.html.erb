@@ -1,4 +1,4 @@
-  <p class='italic center text-center'>Timely email reminders so you never lose your streak on Github!</p>
+  <p class='header'>Timely email reminders so you never lose your streak on Github!</p>
 
 
   <% if current_user %>
@@ -7,5 +7,5 @@
     <%= link_to "Sign in with Github", "/auth/github", :class => 'btn center' %>
   <% end %>
 
-<p class="center text-center"><%= @users %> streakers strong!</p>
-<p class="center text-center"> Top streak: <%= @topstreak %> days!</p>
+<p class="info center text-center"><%= @users %> streakers strong!</p>
+<p class="info center text-center"> Top streak: <%= @topstreak %> days!</p>

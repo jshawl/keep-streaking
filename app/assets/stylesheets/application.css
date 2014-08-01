@@ -17,7 +17,6 @@
 
 .center {
   color: #999;
-  font-family: Georgia, serif;
   margin: 0em auto;
 }
 
@@ -55,8 +54,11 @@ stroke-width:.5;
   display: block;
 }
 
-.italic {
-  font-style: italic
+.header {
+  font-style: italic;
+  color: #999;
+  margin: 2em auto 1em;
+  text-align: center;
 }
 
 #logo {
@@ -66,12 +68,20 @@ stroke-width:.5;
 table{
   border-collapse:collapse;
   width:100%;
+  margin:1em 0em;
 }
 
   th, td{
-    padding: .5em;
+    padding: 1em .5em;
+    border: 0px;
+    border-bottom: 1px solid #F3EEEE;
   }
 
   td:nth-child(2){
     text-align:right;
   }
+
+.container {
+  width: 45em;
+  margin: 0 auto;
+}

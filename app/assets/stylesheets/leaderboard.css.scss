@@ -9,6 +9,8 @@
 }
 
 .grid{
+  overflow: auto;
+
   &:after{
     clear:both;
   }
@@ -18,13 +20,30 @@
   width:33.33%;
   float:left;
   padding:.5em;
+
+  &:first-child {
+    padding-left: 0em;
+  }
+
+  &:last-child {
+    padding-right: 0em;
+  }
 }
 
 .nav label,
 .nav a{
-   background:green; 
+   border: 1px solid #B9C9B9;
    display:block;
    text-align:center;
-   line-height:1.5;
-   color:#fff;
+   font-family: sans-serif;
+   font-size: .8em;
+   font-weight: bold;
+   text-transform: uppercase;
+   line-height: 3;
+   color:#6baa5e;
+
+   &:hover {
+     cursor: pointer;
+   }
 }
+
