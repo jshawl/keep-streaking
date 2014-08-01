@@ -4,7 +4,7 @@ require 'date'
 
 desc "Get Users"
 task :get_users => :environment do
-  @users = User.settings
+  @users = User.all
   today = Date.today.to_s
   yesterday = Date.yesterday.to_s
 
@@ -28,10 +28,12 @@ task :get_users => :environment do
     @s.save
 
     if has_contributed == 0
-      puts 'email '+ u[:name]
-      @u = User.find_by(:name => u[:name])
-      puts @u.streak.streak
-      UserMailer.send_email( @u ).deliver!
+      if u.setting && u.setting.reminders
+	puts 'email '+ u[:name]
+	@u = User.find_by(:name => u[:name])
+	puts @u.streak.streak
+	UserMailer.send_email( @u ).deliver!
+      end
     end
   end
 end
