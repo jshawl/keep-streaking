@@ -4,6 +4,7 @@
 <% end %>
 <% if current_user %>
  <div class="container">
+   <%= image_tag("logo.png", :alt => "logo", :class => "logo-img" ) %>
 <%= form_for(@setting) do |f| %>
   <% if @setting.errors.any? %>
     <div id="error_explanation">
@@ -46,6 +47,18 @@
     <td><%= s.streak %> days!</td>
   </tr>
 <% end %>
+  <tr>
+    <td><a href='https://github.com/'>Duncan</a></td>
+    <td>5 days</td>
+  </tr>
+  <tr>
+    <td><a href='https://github.com/'>Duncan</a></td>
+    <td>5 days</td>
+  </tr>
+  <tr>
+    <td><a href='https://github.com/'>Duncan</a></td>
+    <td>5 days</td>
+  </tr>
 </table>
 
 

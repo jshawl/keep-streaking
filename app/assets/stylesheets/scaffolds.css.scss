@@ -70,6 +70,10 @@ ul, ol {
 
 a {
   text-decoration: none;
+
+  &:visited {
+    //color: #868686;
+  }
 }
 
 img {

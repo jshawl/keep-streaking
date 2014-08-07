@@ -69,7 +69,13 @@ table{
   border-collapse:collapse;
   width:100%;
   margin:1em 0em 4em;
+  color: #868686;
 }
+
+table a {
+  color: #999;
+}
+
 
   th, td{
     padding: 1em .5em;
@@ -85,3 +91,37 @@ table{
   width: 45em;
   margin: 0 auto;
 }
+
+.logo-img {
+  display: none;
+}
+
+@media all and (max-width: 720px) {
+  #logo {
+    display: none;
+  }
+
+  .logo-img {
+    display: block;
+    width: 100%;
+    margin: 4em 0em 2em;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  .third {
+    width: 100%;
+    float: none;  
+  }
+
+  .third:first-child {
+    padding-left: .5em;
+  }
+
+  .third:last-child {
+    padding-right: .5em;
+  }
+}
+
